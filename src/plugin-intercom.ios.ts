@@ -34,7 +34,7 @@ export class PluginIntercom {
   }
 
   static updateUser(attributes: any) {
-    Intercom.updateUser(attributes);
+    Intercom.updateUserWithAttributes(attributes);
   }
 
   static logEvent(eventName: string, metaData?: any) {
