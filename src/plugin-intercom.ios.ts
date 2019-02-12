@@ -45,6 +45,16 @@ export class PluginIntercom {
     if (attributes.phone) {
       userAttributes.phone = attributes.phone;
     }
+    if (attributes.custom_attributes) {
+      let customAttributes = {};
+      for (let key in attributes.custom_attributes) {
+        const value = attributes.custom_attributes[key];
+        if (typeof(value) === 'string') {
+          customAttributes[key] = value;
+        }
+      }
+      userAttributes.customAttributes = customAttributes;
+    }
     Intercom.updateUser(userAttributes);
   }
 
