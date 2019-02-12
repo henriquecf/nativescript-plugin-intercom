@@ -1,4 +1,5 @@
 declare var Intercom: any;
+declare var ICMUserAttributes: any;
 
 export class PluginIntercom {
   static init(apiKey: string, appId: string) {
@@ -34,7 +35,10 @@ export class PluginIntercom {
   }
 
   static updateUser(attributes: any) {
-    Intercom.updateUserWithAttributes(attributes);
+    let userAttributes = ICMUserAttributes();
+    userAttributes.name = attributes.name;
+    userAttributes.email = attributes.email;
+    Intercom.updateUser(attributes);
   }
 
   static logEvent(eventName: string, metaData?: any) {
