@@ -35,9 +35,16 @@ export class PluginIntercom {
   }
 
   static updateUser(attributes: any) {
-    let userAttributes = ICMUserAttributes();
-    userAttributes.name = attributes.name;
-    userAttributes.email = attributes.email;
+    let userAttributes = new ICMUserAttributes();
+    if (attributes.name) {
+      userAttributes.name = attributes.name;
+    }
+    if (attributes.email) {
+      userAttributes.email = attributes.email;
+    }
+    if (attributes.phone) {
+      userAttributes.phone = attributes.phone;
+    }
     Intercom.updateUser(attributes);
   }
 

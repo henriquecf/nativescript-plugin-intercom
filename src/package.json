@@ -1,6 +1,6 @@
 {
     "name": "nativescript-plugin-intercom",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "description": "Your awesome NativeScript plugin.",
     "main": "plugin-intercom",
     "typings": "index.d.ts",
