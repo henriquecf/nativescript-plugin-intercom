@@ -45,7 +45,7 @@ export class PluginIntercom {
     if (attributes.phone) {
       userAttributes.phone = attributes.phone;
     }
-    Intercom.updateUser(attributes);
+    Intercom.updateUser(userAttributes);
   }
 
   static logEvent(eventName: string, metaData?: any) {
